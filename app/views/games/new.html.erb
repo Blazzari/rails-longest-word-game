@@ -1,0 +1,11 @@
+<h1>New game</h1>
+<%= @letters %>
+
+<form action="/score" method="post" data-turbo="false">
+  <h1>What is the longest word you can fin ?</h1>
+  <input type="text" name="answer" placeholder="Your answer here !">
+  <input type="submit">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <%= hidden_field_tag :start_time, @start_time = Time.now %>
+  <%= hidden_field_tag :letters, @letters %>
+</form>
